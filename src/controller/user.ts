@@ -41,7 +41,6 @@ export function getUserRouter() {
  */
 
 async function getUserList() {
-  console.log("getUserList");
   const userList = await Mongo.user.getUserList();
   return userList;
 }
@@ -68,7 +67,6 @@ async function getUserList() {
 
 async function addUser(req: Request) {
   const { name } = req.body;
-  console.log("addUser called", name);
   const hobbyList = await Mongo.user.addUser(name);
   return hobbyList;
 }

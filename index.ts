@@ -41,35 +41,6 @@ async function main() {
     .listen(config.port, () => {
       console.log(`server listening on http://localhost:${config.port}`);
     });
-
-  // ad User
-  // await Mongo.user.addUser("naresh");
-
-  // list all users
-
-  // const allUsers = await Mongo.user.getUserList();
-  // console.log("allUsers", JSON.stringify(allUsers));
-
-  // add hobby
-
-  // await Mongo.hobby.addHobby("60ff77341b67198f3d5cc73c", {
-  //   name: "carrom",
-  //   passionLevel: "high",
-  //   date: "2005",
-  // });
-
-  // get hobby by ids
-
-  // const hobbyList = await Mongo.hobby.getHobbiesListByIds([
-  //   "60ff77ddb945558ff948d9c1",
-  //   "60ff7871a9b46b9059c4e895",
-  // ]);
-  // console.log("hobbyList", hobbyList);
 }
 
 main().catch((err) => console.error("app.init.failed", err));
-
-// http://localhost:4000/user/list
-// http://localhost:4000/user/add-user
-// http://localhost:4000/hobby/list?userName=aaaa
-// http://localhost:4000/hobby/add-hobby

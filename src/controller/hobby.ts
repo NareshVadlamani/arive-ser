@@ -8,58 +8,12 @@ import User from "../models/user";
 import { Types } from "mongoose";
 import Mongo from "../models/mongo";
 
-/**
- *
- * @swagger
- * definitions :
- *    GetHobbies:
- *       type : object
- *       properties:
- *        ids:
- *        type: array
- *         items:
- *           type: string
- *           example: 60ff77341b67198f3d5cc73c
- *    AddHobby:
- *      type : object
- *      properties:
- *        name:
- *          type: string
- *        passionLevel:
- *          type: string
- *        date:
- *          type: string
- *
- */
-
 export function getHobbyRouter() {
   return express
     .Router({ mergeParams: true })
     .post("/list", jaction(getHobbiesByIds))
     .post("/add-hobby", jaction(addHobbyForUser));
 }
-
-/**
- * @swagger
- * /hobby/list:
- *  post:
- *   tags:
- *    - Get Hobbies
- *   summary: API to Get Hobbies by userId
- *   description: API to Get Hobbies by userId
- *   requestBody:
- *    content:
- *     application/json:
- *      schema:
- *       $ref: '#/definitions/GetHobbies'
- *   responses:
- *    200:
- *     description: success
- *     schema:
- *       $ref: '#/definitions/GetHobbies'
- *    500:
- *     description: error
- */
 
 export async function getHobbiesByIds(req: Request, res: Response) {
   const { ids } = req.body;

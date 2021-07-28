@@ -50,17 +50,5 @@ export default class User {
         }
       }
     );
-
-    // const newData = await this.UserClc.findOneAndUpdate(
-    //   { _id },
-    //   {
-    //     $push: {
-    //       hobbies: hobbyId,
-    //     },
-    //   },
-    //   {
-    //     new: true,
-    //   }
-    // );
   }
 }
